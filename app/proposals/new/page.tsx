@@ -30,8 +30,8 @@ export default function NewProposalForm() {
       <div className="max-w-3xl mx-auto px-4 py-8">
           {/* Header */}
           <div className="mb-8">
-            <h1 className="text-2xl font-semibold text-gray-900">New Proposal</h1>
-            <p className="text-gray-500">Enter proposal details</p>
+            <h1 className="text-2xl font-semibold text-black">New Proposal</h1>
+            <p className="text-black">Enter proposal details</p>
           </div>
 
           {/* Progress Steps */}
@@ -54,7 +54,7 @@ export default function NewProposalForm() {
             </div>
             <div className="flex justify-between mt-2">
               {['Basic Info', 'Biodata', 'Horoscope', 'Images'].map((stepName) => (
-                <span key={stepName} className="text-sm text-gray-500">{stepName}</span>
+                <span key={stepName} className="text-sm text-black">{stepName}</span>
               ))}
             </div>
           </div>
@@ -154,13 +154,14 @@ export default function NewProposalForm() {
                 variant="outline"
                 onClick={prevStep}
                 disabled={step === 1}
+                className="text-black border-black"
               >
                 <ChevronLeft className="mr-2 h-4 w-4" /> Back
               </Button>
               {step === totalSteps ? (
-                <Button type="submit">Submit</Button>
+                <Button type="submit" className="bg-blue-600 text-white">Submit</Button>
               ) : (
-                <Button type="button" onClick={nextStep}>
+                <Button type="button" onClick={nextStep} className="bg-blue-600 text-white">
                   Next <ChevronRight className="ml-2 h-4 w-4" />
                 </Button>
               )}

@@ -23,10 +23,10 @@ export default function ProposalDetail() {
           <div className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
             <div className="flex justify-between items-start">
               <div>
-                <h1 className="text-2xl font-semibold text-gray-900">{proposal.candidateName}</h1>
-                <p className="text-gray-500">Received on {new Date(proposal.receivedDate).toLocaleDateString()}</p>
+                <h1 className="text-2xl font-semibold text-black">{proposal.candidateName}</h1>
+                <p className="text-black">Received on {new Date(proposal.receivedDate).toLocaleDateString()}</p>
               </div>
-              <Badge variant="secondary">{proposal.currentStage}</Badge>
+              <Badge className="bg-blue-100 text-black">{proposal.currentStage}</Badge>
             </div>
           </div>
         </div>
@@ -34,7 +34,7 @@ export default function ProposalDetail() {
         {/* Stage Progress */}
         <div className="mb-6">
           <div className="bg-white p-6 rounded-lg shadow-sm">
-            <h2 className="text-lg font-medium mb-4">Progress Tracker</h2>
+            <h2 className="text-lg font-medium text-black mb-4">Progress Tracker</h2>
             <div className="flex items-center gap-2">
               {['Initial Screening', 'Family Meeting', 'Horoscope Matching', 'Final Decision', 'Engagement'].map((stage, index) => (
                 <div key={stage} className="flex-1">
@@ -43,7 +43,7 @@ export default function ProposalDetail() {
                     index === 2 ? 'bg-blue-200' : 
                     'bg-gray-200'
                   }`} />
-                  <p className="text-sm mt-2">{stage}</p>
+                  <p className="text-sm mt-2 text-black">{stage}</p>
                 </div>
               ))}
             </div>
@@ -53,23 +53,23 @@ export default function ProposalDetail() {
         {/* Main Content */}
         <div>
           <Tabs defaultValue="biodata" className="bg-white rounded-lg shadow-sm">
-            <TabsList className="border-b p-2">
-              <TabsTrigger value="biodata" className="gap-2">
+            <TabsList className="border-b p-2 bg-blue-50">
+              <TabsTrigger value="biodata" className="gap-2 text-black">
                 <User className="h-4 w-4" /> Biodata
               </TabsTrigger>
-              <TabsTrigger value="horoscope" className="gap-2">
+              <TabsTrigger value="horoscope" className="gap-2 text-black">
                 <Star className="h-4 w-4" /> Horoscope
               </TabsTrigger>
-              <TabsTrigger value="meetings" className="gap-2">
+              <TabsTrigger value="meetings" className="gap-2 text-black">
                 <Calendar className="h-4 w-4" /> Meetings
               </TabsTrigger>
-              <TabsTrigger value="notes" className="gap-2">
+              <TabsTrigger value="notes" className="gap-2 text-black">
                 <BookOpen className="h-4 w-4" /> Notes
               </TabsTrigger>
-              <TabsTrigger value="images" className="gap-2">
+              <TabsTrigger value="images" className="gap-2 text-black">
                 <ImageIcon className="h-4 w-4" /> Images
               </TabsTrigger>
-              <TabsTrigger value="comments" className="gap-2">
+              <TabsTrigger value="comments" className="gap-2 text-black">
                 <MessageSquare className="h-4 w-4" /> Comments
               </TabsTrigger>
             </TabsList>
@@ -77,29 +77,29 @@ export default function ProposalDetail() {
             <TabsContent value="biodata" className="p-6">
               <div className="grid grid-cols-2 gap-6">
                 <div className="space-y-4">
-                  <h3 className="font-medium">Personal Details</h3>
+                  <h3 className="font-medium text-black">Personal Details</h3>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label className="text-sm text-gray-500">Height</label>
+                      <label className="text-sm text-black">Height</label>
                       <p>{proposal.biodataDetails?.height ? `${proposal.biodataDetails.height} cm` : 'N/A'}</p>
                     </div>
                     <div>
-                      <label className="text-sm text-gray-500">Education</label>
+                      <label className="text-sm text-black">Education</label>
                       <p>{proposal.biodataDetails?.education || 'N/A'}</p>
                     </div>
                     <div>
-                      <label className="text-sm text-gray-500">Occupation</label>
+                      <label className="text-sm text-black">Occupation</label>
                       <p>{proposal.biodataDetails?.job || 'N/A'}</p>
                     </div>
                     <div>
-                      <label className="text-sm text-gray-500">Location</label>
+                      <label className="text-sm text-black">Location</label>
                       <p>{proposal.biodataDetails?.location || 'N/A'}</p>
                     </div>
                   </div>
                 </div>
                 
                 <div className="space-y-4">
-                  <h3 className="font-medium">Family Details</h3>
+                  <h3 className="font-medium text-black">Family Details</h3>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="text-sm text-gray-500">Parent Details</label>
@@ -124,23 +124,23 @@ export default function ProposalDetail() {
 
             <TabsContent value="horoscope" className="p-6">
               <div className="space-y-4">
-                <h3 className="font-medium">Horoscope Details</h3>
+                <h3 className="font-medium text-black">Horoscope Details</h3>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="text-sm text-gray-500">Nakshatra</label>
+                    <label className="text-sm text-black">Nakshatra</label>
                     <p>{proposal.horoscopeDetails?.nakshatra || 'N/A'}</p>
                   </div>
                   <div>
-                    <label className="text-sm text-gray-500">Raashi</label>
+                    <label className="text-sm text-black">Raashi</label>
                     <p>{proposal.horoscopeDetails?.raashi || 'N/A'}</p>
                   </div>
                   <div>
-                    <label className="text-sm text-gray-500">Guna Points</label>
+                    <label className="text-sm text-black">Guna Points</label>
                     <p>{proposal.horoscopeDetails?.gunaPoints || 'N/A'}</p>
                   </div>
                 </div>
                 <div>
-                  <label className="text-sm text-gray-500">Compatibility Notes</label>
+                  <label className="text-sm text-black">Compatibility Notes</label>
                   <p className="mt-1">{proposal.horoscopeDetails?.compatibilityNotes || 'N/A'}</p>
                 </div>
               </div>
@@ -148,7 +148,7 @@ export default function ProposalDetail() {
 
             <TabsContent value="meetings" className="p-6">
               <div className="space-y-4">
-                <h3 className="font-medium">Meeting History</h3>
+                <h3 className="font-medium text-black">Meeting History</h3>
                 <ul className="space-y-4">
                   <li className="bg-gray-50 p-4 rounded-md">
                     <div className="flex justify-between items-start">
@@ -176,21 +176,21 @@ export default function ProposalDetail() {
 
             <TabsContent value="notes" className="p-6">
               <div className="space-y-4">
-                <h3 className="font-medium">Notes</h3>
+                <h3 className="font-medium text-black">Notes</h3>
                 <p>{proposal.initialImpression || 'No notes available.'}</p>
               </div>
             </TabsContent>
 
             <TabsContent value="images" className="p-6">
               <div className="space-y-4">
-                <h3 className="font-medium">Images</h3>
+                <h3 className="font-medium text-black">Images</h3>
                 <p>No images available.</p>
               </div>
             </TabsContent>
 
             <TabsContent value="comments" className="p-6">
               <div className="space-y-4">
-                <h3 className="font-medium">Comments</h3>
+                <h3 className="font-medium text-black">Comments</h3>
                 <p>No comments available.</p>
               </div>
             </TabsContent>
